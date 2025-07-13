@@ -1,0 +1,12 @@
+E:/daima/OpenGL/Study/openGL_Material_Assimp/out/build/x64-Debug/CMakeFiles/openGLstudy.dir
+E:/daima/OpenGL/Study/openGL_Material_Assimp/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+E:/daima/OpenGL/Study/openGL_Material_Assimp/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
+E:/daima/OpenGL/Study/openGL_Material_Assimp/out/build/x64-Debug/wrapper/CMakeFiles/wrapper.dir
+E:/daima/OpenGL/Study/openGL_Material_Assimp/out/build/x64-Debug/wrapper/CMakeFiles/edit_cache.dir
+E:/daima/OpenGL/Study/openGL_Material_Assimp/out/build/x64-Debug/wrapper/CMakeFiles/rebuild_cache.dir
+E:/daima/OpenGL/Study/openGL_Material_Assimp/out/build/x64-Debug/application/CMakeFiles/application.dir
+E:/daima/OpenGL/Study/openGL_Material_Assimp/out/build/x64-Debug/application/CMakeFiles/edit_cache.dir
+E:/daima/OpenGL/Study/openGL_Material_Assimp/out/build/x64-Debug/application/CMakeFiles/rebuild_cache.dir
+E:/daima/OpenGL/Study/openGL_Material_Assimp/out/build/x64-Debug/glFrameWork/CMakeFiles/Fw.dir
+E:/daima/OpenGL/Study/openGL_Material_Assimp/out/build/x64-Debug/glFrameWork/CMakeFiles/edit_cache.dir
+E:/daima/OpenGL/Study/openGL_Material_Assimp/out/build/x64-Debug/glFrameWork/CMakeFiles/rebuild_cache.dir
