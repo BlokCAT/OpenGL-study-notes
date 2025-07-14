@@ -108,5 +108,5 @@ void main()
         res += CalcPointLight(pointLights[i], norm, ShaderPos, viewDir);
     }
   
-    FragColor = texture(material.texture_diffuse1, UV);
+    FragColor = vec4(res, 0.0f);
 }

@@ -45,9 +45,8 @@ unsigned int indices[] = {
 	2 ,1 ,3 ,
 	4 , 5 , 6
 };
-char modelPath[] = "E:/daima/OpenGL/Study/openGL_Material_Assimp/assets/model/backpack/backpack.obj";
 
-Model ourModel(modelPath);
+Model ourModel;
 
 Geometry* geometry = nullptr;
 Geometry* light = nullptr;
@@ -165,23 +164,23 @@ void prepareVAOandLight()
 
 	//点灯的属性
 	pointlight[0].ambient = vec3(0.2f, 0.2f, 0.2f);
-	pointlight[0].diffuse = vec3(1.0f, 1.0f, 1.0f);
+	pointlight[0].diffuse = vec3(1.0f, 0.0f, 1.0f);
 	pointlight[0].specular = vec3(1.0, 1.0f, 1.0f);
-	pointlight[0].position = vec3 (0.7f, 3.0f, 0.9f);
+	pointlight[0].position = vec3 (0.7f, 2.0f, 0.9f);
 	pointlight[0].constant = 1.0f;
 	pointlight[0].linear = 0.09f;
 	pointlight[0].quadratic = 0.032f;
 	pointlight[1].ambient = vec3(0.2f, 0.2f, 0.2f);
-	pointlight[1].diffuse = vec3(1.0f, 1.0f, 1.0f);
+	pointlight[1].diffuse = vec3(0.0f, 1.0f, 1.0f);
 	pointlight[1].specular = vec3(1.0, 1.0f, 1.0f);
-	pointlight[1].position = vec3(6.7f, 3.0f, 3.9f);
+	pointlight[1].position = vec3(-1.7f, 1.0f, 3.9f);
 	pointlight[1].constant = 1.0f;
 	pointlight[1].linear = 0.09f;
 	pointlight[1].quadratic = 0.032f;
 	pointlight[2].ambient = vec3(0.2f, 0.2f, 0.2f);
-	pointlight[2].diffuse = vec3(1.0f, 1.0f, 1.0f);
+	pointlight[2].diffuse = vec3(1.0f, 1.0f, 0.0f);
 	pointlight[2].specular = vec3(1.0, 1.0f, 1.0f);
-	pointlight[2].position = vec3(3.7f, -3.0f, 4.9f);
+	pointlight[2].position = vec3(1.7f, -2.0f, -1.9f);
 	pointlight[2].constant = 1.0f;
 	pointlight[2].linear = 0.09f;
 	pointlight[2].quadratic = 0.032f;
@@ -266,7 +265,7 @@ void render() {//执行opebGL渲染操作
 	
 	shader->setUniformMatrix4x4("transform", BackParktransform);
 	shader->setUniformMatrix4x4("model", model);
-
+	shader->setUniformFloat("material.shininess", 32.0f);
 	ourModel.Draw(*shader);
 
 	shader->end();
@@ -312,6 +311,9 @@ int main()
 	prepareCamera();
 	
 	glEnable(GL_DEPTH_TEST);
+
+	char modelPath[] = "E:/daima/OpenGL/Study/openGL_Material_Assimp/assets/model/backpack/backpack.obj";
+	ourModel = Model(modelPath);
 	//执行窗体循环
 	while (app->update())
 	{

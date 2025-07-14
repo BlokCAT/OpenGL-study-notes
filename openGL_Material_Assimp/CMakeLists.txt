@@ -27,3 +27,13 @@ add_subdirectory(glFrameWork)
 
 add_executable( openGLstudy "main.cpp" "glad.c" )# 加载exe
 target_link_libraries(openGLstudy  glfw3.lib  wrapper  application  Fw  assimp-vc143-mtd.lib  poly2tri.lib ) # 加载exe的 时候需要静态链接库，所以这里就是链接 glfw3.lib
+
+
+# 添加自定义命令和目标，用于复制DLL
+add_custom_command(
+    TARGET openGLstudy POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy
+        "${CMAKE_CURRENT_SOURCE_DIR}/thirdParty/bin/assimp-vc143-mtd.dll"
+        $<TARGET_FILE_DIR:openGLstudy>
+    COMMENT "复制Assimp DLL到可执行文件目录"
+)

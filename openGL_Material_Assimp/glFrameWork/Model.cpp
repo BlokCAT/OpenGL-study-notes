@@ -1,6 +1,8 @@
 #include "Model.h"
-#include "../application/stb_image.h"
+
 #include <fstream>
+#define STB_IMAGE_IMPLEMENTATION 
+#include "../application/stb_image.h" //读取图片的外部库
 unsigned int TextureFromFile(std::string path, const std::string& directory);
 
 void Model::Draw(Shader shader)
@@ -24,7 +26,7 @@ void Model::loadModel(std::string path)
 
     std::cout << "开始递归Assimpl里面的模型顶点" << std::endl;
     processNode(scene->mRootNode, scene);
-    std::cout << "递归处理没问题" << std::endl;
+    std::cout << "递归处理没问题，model材质纹理建立完毕！！！" << std::endl;
 }
 
 
@@ -144,18 +146,6 @@ unsigned int TextureFromFile(std::string path, const std::string& directory)
 
     unsigned int textureID;
     glGenTextures(1, &textureID);
-
-
-
-    std::ifstream f(filepath);
-
-    if (!f.good()) {
-        std::cerr << "文件无法打开（ifstream）: " << filepath << std::endl;
-    }
-    else {
-        std::cout << "文件存在: " << filepath << std::endl;
-    }
-
 
     stbi_set_flip_vertically_on_load(true);  // 可选，避免贴图倒置
 

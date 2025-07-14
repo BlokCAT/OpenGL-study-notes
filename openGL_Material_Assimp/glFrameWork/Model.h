@@ -7,6 +7,9 @@
 class Model
 {
 public:
+    Model(){}
+
+
     /*  º¯Êý   */
     Model(char* path)
     {
